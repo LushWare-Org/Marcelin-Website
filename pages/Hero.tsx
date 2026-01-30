@@ -15,6 +15,8 @@ export default function Hero() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isBrowser = typeof window !== 'undefined';
+
   return (
     <section id="home" className="relative bg-[#020202] min-h-screen md:min-h-[200vh] selection:bg-cyan-500/30">
       {/* Full background texture */}
@@ -109,15 +111,15 @@ export default function Hero() {
           className="col-start-1 row-start-1 z-20 text-center pointer-events-none transition-all duration-300 ease-out will-change-transform px-4"
           style={{ 
             // Text scales down and settles into the center of the image
-            transform: window.innerWidth >= 768 ? `translateY(${3 + scroll * 7}vh) scale(${0.9 - scroll * 0.35})` : 'translateY(0) scale(1)',
-            filter: window.innerWidth >= 768 ? `drop-shadow(0 20px 30px rgba(0,0,0,${scroll}))` : 'none'
+            transform: isBrowser && window.innerWidth >= 768 ? `translateY(${3 + scroll * 7}vh) scale(${0.9 - scroll * 0.35})` : 'translateY(0) scale(1)',
+            filter: isBrowser && window.innerWidth >= 768 ? `drop-shadow(0 20px 30px rgba(0,0,0,${scroll}))` : 'none'
           }}
         >
           <div
             className="inline-block px-3 sm:px-6 md:px-8 py-3 sm:py-5 md:py-6 rounded-xl md:rounded-2xl"
-            style={{ backgroundColor: window.innerWidth >= 768 ? `rgba(2,2,2,${0.2 + scroll * 0.05})` : 'rgba(2,2,2,0.3)' }}
+            style={{ backgroundColor: isBrowser && window.innerWidth >= 768 ? `rgba(2,2,2,${0.2 + scroll * 0.05})` : 'rgba(2,2,2,0.3)' }}
           >
-            <div className="mb-3 md:mb-6 overflow-hidden" style={{ opacity: window.innerWidth >= 768 ? 1 - scroll * 2 : 1 }}>
+            <div className="mb-3 md:mb-6 overflow-hidden" style={{ opacity: isBrowser && window.innerWidth >= 768 ? 1 - scroll * 2 : 1 }}>
               <span className="inline-block text-[8px] sm:text-[9px] md:text-[10px] font-mono text-silver-500 tracking-[0.5em] sm:tracking-[0.8em] md:tracking-[1em] uppercase">
                 Establish Connection
               </span>
@@ -133,7 +135,7 @@ export default function Hero() {
 
             <div 
               className="mt-20 sm:mt-12 md:mt-16 flex flex-col sm:flex-row gap-10 sm:gap-6 md:gap-10 justify-center items-center" 
-              style={{ opacity: window.innerWidth >= 768 ? 1 - scroll * 2 : 1 }}
+              style={{ opacity: isBrowser && window.innerWidth >= 768 ? 1 - scroll * 2 : 1 }}
             >
               <button 
                 onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
