@@ -109,7 +109,7 @@ export default function Hero() {
           className="col-start-1 row-start-1 z-20 text-center pointer-events-none transition-all duration-300 ease-out will-change-transform"
           style={{ 
             // Text scales down and settles into the center of the image
-            transform: `translateY(${scroll * 7}vh) scale(${1 - scroll * 0.45})`,
+            transform: `translateY(${3 + scroll * 7}vh) scale(${0.9 - scroll * 0.35})`,
             filter: `drop-shadow(0 20px 30px rgba(0,0,0,${scroll}))`
           }}
         >
@@ -123,13 +123,45 @@ export default function Hero() {
               </span>
             </div>
 
-            <h1 className="text-[14vw] md:text-[11vw] font-black leading-[0.75] tracking-tighter text-white uppercase italic">
+            <h1 className="text-[14vw] md:text-[11vw] font-black leading-[0.75] tracking-tight text-white uppercase italic">
               Marcelin <br />
               Global <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-silver-600">
                 Holdings.
               </span>
             </h1>
+
+            <div 
+              className="mt-16 flex flex-col sm:flex-row gap-10 justify-center items-center" 
+              style={{ opacity: 1 - scroll * 2 }}
+            >
+              <button 
+                onClick={() => document.getElementById('products')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group relative px-12 py-5 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-full transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(6,182,212,0.25)] overflow-hidden pointer-events-auto cursor-pointer"
+              >
+                {/* Shine Reflection Effect */}
+                <div className="absolute inset-0 w-1/2 h-full bg-white/20 skew-x-[-25deg] -translate-x-full group-hover:translate-x-[250%] transition-transform duration-1000 ease-in-out" />
+                
+                <span className="relative z-10 flex items-center gap-3 text-white text-md font-bold uppercase tracking-[0.2em]">
+                  Explore More
+                  <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </button>
+
+              <button 
+                onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
+                className="group relative px-12 py-5 rounded-full border border-white/50 bg-white/20 backdrop-blur-md transition-all duration-300 hover:bg-white/10 hover:border-cyan-500/50 pointer-events-auto cursor-pointer"
+              >
+                {/* Inner Glow */}
+                <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500 shadow-[inset_0_0_20px_rgba(34,211,238,0.1)]" />
+                
+                <span className="relative z-10 text-silver-200 group-hover:text-cyan-400 text-md font-bold uppercase tracking-[0.2em] transition-colors">
+                  Learn More
+                </span>
+              </button>
+            </div>
           </div>
         </div>
 
