@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import ScrollReveal from '@/components/ScrollReveal';
 
 interface Product {
   name: string;
@@ -37,7 +38,7 @@ const products: Product[] = [
 export default function Products() {
   return (
     <section id="products" className="md:py-16 md:px-4 px-8 py-16">
-      <div className="max-w-7xl mx-auto">
+      <ScrollReveal className="max-w-7xl mx-auto">
         {/* Header Section */}
         <div className="flex flex-col items-center text-center mb-16">
           <h2 className="text-sm font-black uppercase tracking-[0.3em] text-cyan-500 mb-2">
@@ -62,7 +63,7 @@ export default function Products() {
             <ProductCard key={index} product={product} />
           ))}
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

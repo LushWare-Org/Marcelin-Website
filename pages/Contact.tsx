@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -59,7 +60,7 @@ export default function Contact() {
       <div className="absolute -top-[10%] -left-[10%] w-[120%] h-[40%] bg-cyan-900/5 -rotate-12 blur-[120px] pointer-events-none" />
       <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-[0.03] pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto  px-4 sm:px-0 md:px-0">
+      <ScrollReveal className="relative z-10 max-w-6xl mx-auto  px-4 sm:px-0 md:px-0">
         {/* --- HEADER SECTION: 1 ROW, 2 COLUMNS --- */}
         <div className="grid lg:grid-cols-2 gap-6 px-4 md:px-0 sm:gap-8 md:gap-10 items-end pb-6 sm:pb-8 mb-8">
           
@@ -237,7 +238,7 @@ export default function Contact() {
             )}
           </div>
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

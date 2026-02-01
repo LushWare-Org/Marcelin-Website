@@ -1,7 +1,9 @@
+import ScrollReveal from '@/components/ScrollReveal';
+
 export default function Founder() {
   return (
     <section id="founder" className="py-20 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-10 lg:px-8">
+      <ScrollReveal className="max-w-7xl mx-auto px-10 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-0 items-center">
           
           {/* Left Column: Refined Image Frame */}
@@ -63,7 +65,7 @@ export default function Founder() {
           </div>
 
         </div>
-      </div>
+      </ScrollReveal>
     </section>
   );
 }

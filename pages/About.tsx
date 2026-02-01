@@ -1,4 +1,5 @@
 import { Download, ChevronRight, Globe, Layers, BarChart3, Shield } from 'lucide-react';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export default function About() {
   const projects = [
@@ -27,7 +28,7 @@ export default function About() {
 
 
       <div className="max-w-7xl mx-auto px-6 py-20">
-        <div className="w-full max-w-7xl mx-auto px-4 py-8">
+        <ScrollReveal className="w-full max-w-7xl mx-auto px-4 py-8">
         
         {/* --- HEADER SECTION --- */}
         <div className="text-center mb-16">
@@ -59,7 +60,9 @@ export default function About() {
             </p>
           </div>
         </div>
+        </ScrollReveal>
 
+        <ScrollReveal>
         {/* --- WIDE DESCRIPTION BLOCK --- */}
         <div className="grid lg:grid-cols-12 gap-12 border-y border-white/30 py-16 mb-20 items-center">
           <div className="lg:col-span-5 text-3xl lg:text-4xl font-light text-white leading-[1.1] tracking-tight">
@@ -112,10 +115,10 @@ export default function About() {
           </a>
 
         </div>
-        </div>
+        </ScrollReveal>
 
         {/* --- BOTTOM: PROJECTS UNDER DEVELOPMENT --- */}
-        <div className="w-full max-w-7xl mx-auto px-4 ">
+        <ScrollReveal className="w-full max-w-7xl mx-auto px-4 ">
           <div className="mt-16">
             {/* Header with a thinner, more elegant divider */}
             <div className="flex items-end justify-center mb-12">
@@ -154,7 +157,7 @@ export default function About() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
 
 
