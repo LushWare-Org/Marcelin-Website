@@ -57,9 +57,17 @@ export default function Navbar() {
             <a 
               href="#home" 
               onClick={(e) => handleClick(e, 'Home', '#home')}
-              className="pl-4 sm:pl-6 hover:opacity-80 transition"
+              className="pl-4 sm:pl-6 hover:opacity-80 transition relative group"
             >
-              <img src="/mghlogo2.png" alt="MGH Logo" className="h-8 sm:h-10" />
+              {/* Animated glow effect behind logo */}
+              <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/20 via-blue-500/20 to-cyan-500/20 rounded-full blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400/10 to-blue-400/10 rounded-full animate-pulse" />
+              
+              <img 
+                src="/mghlogo2.png" 
+                alt="MGH Logo" 
+                className="h-8 sm:h-10 relative z-10 drop-shadow-[0_0_8px_rgba(6,182,212,0.3)]" 
+              />
             </a>
           </div>
 
